@@ -1,0 +1,60 @@
+{
+    "name": "ravenflux/php-functions",
+    "description": "Twig extension that implements a way to use native PHP functions and filters in Twig template",
+    "type": "library",
+    "keywords": [
+        "php",
+        "ravenflux",
+        "symfony",
+        "symfony4",
+        "symfony5",
+        "twig",
+        "twig-extension"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dāvis Zālītis (k0d3r1s)",
+            "email": "k0d3r1s@vairogs.com",
+            "homepage": "https://github.com/k0d3r1s",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@vairogs.com",
+        "issues": "https://github.com/vairogs/vairogs/issues",
+        "wiki": "https://github.com/vairogs/vairogs/wiki"
+    },
+    "funding": [
+        {
+            "type": "ko-fi",
+            "url": "https://ko-fi.com/k0d3r1s"
+        },
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/k0d3r1s"
+        },
+        {
+            "type": "issuehunt",
+            "url": "https://issuehunt.io/r/vairogs/vairogs"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "twig/twig": "3.*",
+        "vairogs/utils": "3.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "RavenFlux\\Php\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        }
+    }
+}

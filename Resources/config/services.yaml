@@ -1,0 +1,7 @@
+services:
+    ravenflux.twig.extension.php_functions:
+        class: RavenFlux\Php\PhpFunctionsExtension
+        public: false
+        tags:
+            -
+                name: twig.extension
