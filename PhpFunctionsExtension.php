@@ -2,6 +2,7 @@
 
 namespace RavenFlux\Php;
 
+use JetBrains\PhpStorm\Pure;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -53,7 +54,7 @@ class PhpFunctionsExtension extends AbstractExtension
      *
      * @return array
      */
-    private function getCallbacks(array $callables = []): array
+    #[Pure] private function getCallbacks(array $callables = []): array
     {
         $result = [];
         foreach ($callables as $function) {
@@ -95,7 +96,7 @@ class PhpFunctionsExtension extends AbstractExtension
      *
      * @return mixed
      */
-    public function getFilter($object, string $filter, ...$arguments)
+    public function getFilter(mixed $object, string $filter, ...$arguments): mixed
     {
         if (!$arguments) {
             return $filter($object);
@@ -110,7 +111,7 @@ class PhpFunctionsExtension extends AbstractExtension
      *
      * @return mixed
      */
-    public function getFunction(string $function, ...$arguments)
+    public function getFunction(string $function, ...$arguments): mixed
     {
         return $function(...$arguments);
     }
