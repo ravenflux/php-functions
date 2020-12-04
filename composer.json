@@ -40,7 +40,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.0.0",
         "jetbrains/phpstorm-attributes": "*",
         "twig/twig": "3.*",
         "vairogs/utils": "3.x-dev"

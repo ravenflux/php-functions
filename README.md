@@ -19,7 +19,7 @@ The recommended way to install is via Composer:
 ```shell
 composer require ravenflux/php-functions
 ```
-This package requires at least PHP 7.4.0
+This package requires at least PHP 8.0.0
 
 For Symfony usage add it as a service and tag it:
 ```yaml
