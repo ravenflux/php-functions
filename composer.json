@@ -56,6 +56,10 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.x-dev"
+        },
+        "thanks": {
+            "name": "vairogs/vairogs",
+            "url": "https://github.com/vairogs/vairogs"
         }
     }
 }
