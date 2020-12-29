@@ -17,17 +17,8 @@ use function sprintf;
 
 class PhpFunctionsExtension extends AbstractExtension
 {
-    private ?array $functions;
-    private ?array $filters;
-
-    /**
-     * @param array $functions
-     * @param array $filters
-     */
-    public function __construct(array $functions = [], array $filters = [])
+    public function __construct(private array $functions = [], private array $filters = [])
     {
-        $this->functions = $functions;
-        $this->filters = $filters;
     }
 
     /**
