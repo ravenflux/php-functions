@@ -32,9 +32,7 @@ class PhpFunctionsExtension extends AbstractExtension
     {
         $callbacks = $this->getCallbacks($this->filters);
 
-        $mappedFilters = array_map(static function ($function, $callback) {
-            return new TwigFilter($function, $callback);
-        }, array_keys($callbacks), $callbacks);
+        $mappedFilters = array_map(static fn($function, $callback) => new TwigFilter($function, $callback), array_keys($callbacks), $callbacks);
 
         $mappedFilters[] = new TwigFilter(sprintf('%s_filter', Vairogs::RAVEN), [
             $this,
@@ -72,9 +70,7 @@ class PhpFunctionsExtension extends AbstractExtension
     {
         $callbacks = $this->getCallbacks($this->functions);
 
-        $mappedFunctions = array_map(static function ($function, $callback) {
-            return new TwigFunction($function, $callback);
-        }, array_keys($callbacks), $callbacks);
+        $mappedFunctions = array_map(static fn($function, $callback) => new TwigFunction($function, $callback), array_keys($callbacks), $callbacks);
 
         $mappedFunctions[] = new TwigFunction(sprintf('%s_function', Vairogs::RAVEN), [
             $this,
