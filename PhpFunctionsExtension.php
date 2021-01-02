@@ -34,7 +34,7 @@ class PhpFunctionsExtension extends AbstractExtension
 
         $mappedFilters = array_map(static fn ($function, $callback) => new TwigFilter($function, $callback), array_keys($callbacks), $callbacks);
 
-        $mappedFilters[] = new TwigFilter(sprintf('%s_filter', Vairogs::RAVEN), fn(mixed $object, string $filter, ...$arguments): mixed => $this->getFilter($object, $filter, $arguments));
+        $mappedFilters[] = new TwigFilter(sprintf('%s_filter', Vairogs::RAVEN), fn (mixed $object, string $filter, ...$arguments): mixed => $this->getFilter($object, $filter, $arguments));
 
         return $mappedFilters;
     }
@@ -61,20 +61,6 @@ class PhpFunctionsExtension extends AbstractExtension
     }
 
     /**
-     * @return array
-     */
-    public function getFunctions(): array
-    {
-        $callbacks = $this->getCallbacks($this->functions);
-
-        $mappedFunctions = array_map(static fn ($function, $callback) => new TwigFunction($function, $callback), array_keys($callbacks), $callbacks);
-
-        $mappedFunctions[] = new TwigFunction(sprintf('%s_function', Vairogs::RAVEN), fn(string $function, ...$arguments): mixed => $this->getFunction($function, $arguments));
-
-        return $mappedFunctions;
-    }
-
-    /**
      * @param mixed $object
      * @param string $filter
      * @param mixed ...$arguments
@@ -88,6 +74,20 @@ class PhpFunctionsExtension extends AbstractExtension
         }
 
         return $filter($object, ...$arguments);
+    }
+
+    /**
+     * @return array
+     */
+    public function getFunctions(): array
+    {
+        $callbacks = $this->getCallbacks($this->functions);
+
+        $mappedFunctions = array_map(static fn ($function, $callback) => new TwigFunction($function, $callback), array_keys($callbacks), $callbacks);
+
+        $mappedFunctions[] = new TwigFunction(sprintf('%s_function', Vairogs::RAVEN), fn (string $function, ...$arguments): mixed => $this->getFunction($function, $arguments));
+
+        return $mappedFunctions;
     }
 
     /**
